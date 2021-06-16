@@ -52,7 +52,7 @@
 
 ##### Requests
 
-- Due to the requirement of this challenge, there was a need to create a route, but others will be implemented later.
+- Due to the requirement of this challenge, there was a need to create only one route, but others will be implemented later.
 - Available routes:
 
 | Method | Route                        | Parameters             | Action                                                                  | 

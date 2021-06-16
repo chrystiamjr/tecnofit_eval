@@ -1,7 +1,14 @@
 <?php
 
 class BaseController extends Phalcon\Mvc\Controller {
-  
+
+    /**
+     * BaseController send code headers with formatted content.
+     * @param integer $code
+     * @param array $msg
+     * @param array $errors
+     * @return null
+     */
     public function sendResponse($code, $msg, $errors = null) {
         $response = $this->response;
         $response->setStatusCode($code)->sendHeaders();
@@ -10,10 +17,19 @@ class BaseController extends Phalcon\Mvc\Controller {
         return;
     }
 
+    /**
+     * BaseController handle routes not found.
+     */
     public function notFound() {
         $this->sendResponse(404, null, ['404 not found']);
     }
 
+    /**
+     * BaseController create formatted json body for response.
+     * @param array $data
+     * @param array $errors
+     * @return string
+     */
     private function createMeta($data, $errors) {
         $content = [];
         $content['api_version'] = '1.0.0';
@@ -21,19 +37,13 @@ class BaseController extends Phalcon\Mvc\Controller {
         if(is_null($data) && !is_null($errors)) {
             $content['errors'] = $errors;
         } else {
-            if(is_string($data)) {
-                $content['data'] = json_decode($data);
-            } else {
-                $content['data'] = $data;
-            }
+            $content['data'] = $data;
         }
 
         $msg = !array_key_exists('errors', $content) ? $content['data'] : $content['errors'];
-        $hash = hash_hmac('sha1', json_encode($msg), 'tecnofit');
-
         $meta = [];
         $meta['timestamp'] = date('Y-m-d H:i:s');
-        $meta['hash'] = $hash;
+        $meta['hash'] = md5(json_encode($msg));
         $content['meta'] = $meta;
 
         return json_encode($content);
