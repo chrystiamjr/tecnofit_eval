@@ -8,7 +8,7 @@ class MovementController extends BaseController {
      */
     public function fetchLeaderboardByMovement($id) {
         try {
-            $records = (new MovementDAO())->getPersonalRecordByMovement($id);
+            $records = (new MovementDAO())->getPersonalRecordByMovementId($id);
             $response = (new LeaderboardDTO())->getLeaderboard($records);
 
             $this->sendResponse(200, $response);

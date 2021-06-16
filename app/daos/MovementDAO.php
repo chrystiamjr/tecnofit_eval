@@ -7,7 +7,7 @@ class MovementDAO extends Phalcon\Mvc\Controller {
      * @param integer $id
      * @return Object
      */
-    public function getPersonalRecordByMovement($id) {
+    public function getPersonalRecordByMovementId($id) {
         return $this->modelsManager->createBuilder()
             ->columns(['u.name user_name', 'm.name move_name', 'MAX(p.value) score', 'p.date'])
             ->addFrom('PersonalRecord', 'p')
