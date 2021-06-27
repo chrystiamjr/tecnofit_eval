@@ -3,8 +3,8 @@
 /**
  * Registering an autoloader
  */
-$loader = new \Phalcon\Loader();
-$loader->registerDirs([
-    $config->application->controllersDir,
-    $config->application->modelsDir
-])->register();
+
+use Phalcon\Loader;
+
+$loader = new Loader();
+$loader->registerNamespaces((array) $config->namespaces)->register();

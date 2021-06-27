@@ -1,6 +1,10 @@
 <?php
 
-class BaseController extends Phalcon\Mvc\Controller {
+namespace Tecnofit\Controller;
+
+use Phalcon\Mvc\Controller;
+
+class BaseController extends Controller {
 
     /**
      * BaseController send code headers with formatted content.

@@ -1,7 +1,10 @@
 <?php
 
-class PersonalRecord extends \Phalcon\Mvc\Model
-{
+namespace Tecnofit\Model;
+
+use Phalcon\Mvc\Model;
+
+class PersonalRecord extends Model {
 
     /**
      *
@@ -36,8 +39,7 @@ class PersonalRecord extends \Phalcon\Mvc\Model
     /**
      * Initialize method for model.
      */
-    public function initialize()
-    {
+    public function initialize() {
         $this->setSchema("tecnofit");
         $this->setSource("personal_record");
         
@@ -50,8 +52,7 @@ class PersonalRecord extends \Phalcon\Mvc\Model
      *
      * @return string
      */
-    public function getSource()
-    {
+    public function getSource() {
         return 'personal_record';
     }
 
@@ -61,8 +62,7 @@ class PersonalRecord extends \Phalcon\Mvc\Model
      * @param mixed $parameters
      * @return PersonalRecord[]|PersonalRecord|\Phalcon\Mvc\Model\ResultSetInterface
      */
-    public static function find($parameters = null)
-    {
+    public static function find($parameters = null) {
         return parent::find($parameters);
     }
 
@@ -72,8 +72,7 @@ class PersonalRecord extends \Phalcon\Mvc\Model
      * @param mixed $parameters
      * @return PersonalRecord|\Phalcon\Mvc\Model\ResultInterface
      */
-    public static function findFirst($parameters = null)
-    {
+    public static function findFirst($parameters = null) {
         return parent::findFirst($parameters);
     }
 

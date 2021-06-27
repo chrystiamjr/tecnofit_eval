@@ -9,9 +9,6 @@ date_default_timezone_set('America/Sao_Paulo');
 define('BASE_PATH', dirname(__DIR__));
 define('APP_PATH', BASE_PATH . '/app');
 
-require_once APP_PATH . '/dtos/index.php';
-require_once APP_PATH . '/daos/index.php';
-
 try {
     $di = new FactoryDefault();
 

@@ -17,5 +17,12 @@ return new \Phalcon\Config([
         'modelsDir'      => APP_PATH . '/models/',
         'controllersDir' => APP_PATH . '/controllers/',
         'baseUri'        => '/tecnofit/',
+    ],
+
+    'namespaces' => [
+        'Tecnofit\Controller'   => APP_PATH . '/controllers/',
+        'Tecnofit\Model'        => APP_PATH . '/models/',
+        'Tecnofit\Dto'          => APP_PATH . '/dtos/',
+        'Tecnofit\Dao'          => APP_PATH . '/daos/',
     ]
 ]);

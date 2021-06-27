@@ -1,6 +1,8 @@
 <?php
 
-class LeaderboardDTO implements JsonSerializable {
+namespace Tecnofit\Dto;
+
+class LeaderboardDTO extends BaseDTO {
 
     /**
      * @var integer
@@ -35,10 +37,10 @@ class LeaderboardDTO implements JsonSerializable {
     public function __construct($position = 0, $leaderboard = null) {
         if(!is_null($leaderboard)) {
             $this->position = $position;
-            $this->score = $leaderboard->score;
-            $this->user = $leaderboard->user_name;
+            $this->score    = $leaderboard->score;
+            $this->user     = $leaderboard->user_name;
             $this->movement = $leaderboard->move_name;
-            $this->date = $leaderboard->date;
+            $this->date     = $leaderboard->date;
         }
     }
 
@@ -60,13 +62,5 @@ class LeaderboardDTO implements JsonSerializable {
             $parsedArr[] = new LeaderboardDTO($position, $row);
         }
         return $parsedArr;
-    }
-
-    /**
-     * Serialize private attributes of the class
-     * @return array
-     */
-    public function jsonSerialize() {
-        return get_object_vars($this);
     }
 }

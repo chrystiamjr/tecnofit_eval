@@ -4,8 +4,7 @@ namespace Tecnofit\Model;
 
 use Phalcon\Mvc\Model;
 
-class Movement extends Model
-{
+class Movement extends Model {
 
     /**
      *
@@ -22,8 +21,7 @@ class Movement extends Model
     /**
      * Initialize method for model.
      */
-    public function initialize()
-    {
+    public function initialize() {
         $this->setSchema("tecnofit");
         $this->setSource("movement");
         
@@ -35,8 +33,7 @@ class Movement extends Model
      *
      * @return string
      */
-    public function getSource()
-    {
+    public function getSource() {
         return 'movement';
     }
 
@@ -46,8 +43,7 @@ class Movement extends Model
      * @param mixed $parameters
      * @return Movement[]|Movement|\Phalcon\Mvc\Model\ResultSetInterface
      */
-    public static function find($parameters = null)
-    {
+    public static function find($parameters = null) {
         return parent::find($parameters);
     }
 
@@ -57,8 +53,7 @@ class Movement extends Model
      * @param mixed $parameters
      * @return Movement|\Phalcon\Mvc\Model\ResultInterface
      */
-    public static function findFirst($parameters = null)
-    {
+    public static function findFirst($parameters = null) {
         return parent::findFirst($parameters);
     }
 

@@ -1,7 +1,10 @@
 <?php
 
-class User extends \Phalcon\Mvc\Model
-{
+namespace Tecnofit\Model;
+
+use Phalcon\Mvc\Model;
+
+class User extends Model {
 
     /**
      *
@@ -18,8 +21,7 @@ class User extends \Phalcon\Mvc\Model
     /**
      * Initialize method for model.
      */
-    public function initialize()
-    {
+    public function initialize() {
         $this->setSchema("tecnofit");
         $this->setSource("user");
 
@@ -31,8 +33,7 @@ class User extends \Phalcon\Mvc\Model
      *
      * @return string
      */
-    public function getSource()
-    {
+    public function getSource() {
         return 'user';
     }
 
@@ -42,8 +43,7 @@ class User extends \Phalcon\Mvc\Model
      * @param mixed $parameters
      * @return User[]|User|\Phalcon\Mvc\Model\ResultSetInterface
      */
-    public static function find($parameters = null)
-    {
+    public static function find($parameters = null) {
         return parent::find($parameters);
     }
 
@@ -53,8 +53,7 @@ class User extends \Phalcon\Mvc\Model
      * @param mixed $parameters
      * @return User|\Phalcon\Mvc\Model\ResultInterface
      */
-    public static function findFirst($parameters = null)
-    {
+    public static function findFirst($parameters = null) {
         return parent::findFirst($parameters);
     }
 
