@@ -1,6 +1,10 @@
 <?php
 
-class Movement extends \Phalcon\Mvc\Model
+namespace Tecnofit\Model;
+
+use Phalcon\Mvc\Model;
+
+class Movement extends Model
 {
 
     /**
